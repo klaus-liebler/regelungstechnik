@@ -6,9 +6,6 @@ import cmath;
 
 p1=Polynomial.fromroots([complex(1, 2), complex(1,-2)])
 
-p2=Polynomial([-25,31,-7,1])
-
-print(p2.roots())
-p3 = Polynomial([-1, 1])
-p4=P.polydiv(p2.coef, p3.coef)
-print(p4)
+aufgabe2_1_a=Polynomial([200, 2, 2])
+print("Nullstellen A2_1_a: ", aufgabe2_1_a.roots())
+print("Nullstellen A2_1_b: ", Polynomial([-25, 31,-7,1]).roots())

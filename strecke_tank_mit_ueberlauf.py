@@ -4,20 +4,19 @@ import matplotlib.pyplot as plt
 from labellines import labelLine, labelLines
 
 #  Eingabefeld mit Angabe der Voreinstellungen  
-
 u_pumpe_vect=np.arange(2.0, 10.0, 1.0)
 
 # Streckendaten:
 A_ab=6          # 3 < Aab0 < 9  (mm^2) Fester Wert der Abflußventilöffnung  (offene Querschnittsfläche)
-A_tank=30           #  cm^2, Tankquerschnittfläche
-c_p=2            #  (g/s)/V, Pumpenkonstante
+A_tank=30       #  cm^2, Tankquerschnittfläche
+c_p=2           #  (g/s)/V, Pumpenkonstante
 hmax=16         #  cm, Überlauf
 
 # Rechne in SI-Einheiten um
-A_tank=1e-4*A_tank        #  cm^2 in m^2
-c_p=1e-3*c_p      #  (g/s)/V in (kg/s)/V
-hmax=hmax*1e-2  #  cm in m
-A_ab=A_ab*1e-6  #  mm^2 in m^2
+A_tank=1e-4*A_tank #  cm^2 in m^2
+c_p=1e-3*c_p       #  (g/s)/V in (kg/s)/V
+hmax=hmax*1e-2     #  cm in m
+A_ab=A_ab*1e-6     #  mm^2 in m^2
 
 #definiere physikalische Konstanten
 rho=1e3         #  kg/m^3
@@ -40,7 +39,7 @@ ts = np.arange(t_span[0], t_span[1], t_step)
 #define das System
 def system_tank(t, h, u_pumpe): #t ist Zeit, h ist die aktuelle Füllhöhe
     dhdt=-c1*A_ab*np.sqrt(h)+c2*u_pumpe #siehe Buch S. 63
-    if h>=hmax and dhdt>0:
+    if h>=hmax:
         return 0
     return dhdt
 

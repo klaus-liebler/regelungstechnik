@@ -1,0 +1,24 @@
+"Was muss man für die Laplace-Transformation tatsaechlich (!) koennen?"
+"","Komplexwertige Integrale loesen"
+"","Loesungen in Tabellen nachschlagen (Richtig)"
+"","Partialbruchzerlegung (Richtig)"
+"","Grundrechenarten (Richtig)"
+
+"Was gelingt NICHT mit der Laplace-Transformation?"
+"","		Die experimentelle statische Analyse einer Regelstrecke (Richtig)"
+"","Die Untersuchung eines Regelkreises auf Stabilitaet"
+"","Die Untersuchung eines Übertragungsgliedes auf Stabilitaet"
+"","Die Bestimmung der Sprungantwort eines Übertragungsgliedes"
+
+"Welche Operationsregeln haben Sie bereits kennen gelernt?"
+"","Linearitaetsregel (Richtig)"
+"","Differentationsregel (Richtig)"
+"","Multiplikationsregel"
+"","Rekursionsregel"
+
+"Was ist die Laplace-Transformierte von $f^{\prime}(t)$?"
+"","$s\cdot F\left(s\right)$ (Richtig)"
+"","$\frac{1}{s}\cdot F\left(s\right)$"
+"","$F^{\prime}(s)$"
+"","$f\left(t\right) \cdot F\left(s^{\prime}\right)$"
+

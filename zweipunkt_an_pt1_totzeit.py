@@ -8,15 +8,16 @@ from enum import Enum
 t_span = (0.0, 5.0)
 t_step = 0.01
 ts = np.arange(t_span[0], t_span[1], t_step)
+T_delay=0.2
 
 #Define System
 Kp_pt1 = 1
 T_pt1  = 1
 def system_pt1(t, state, tpc):
-    y=state
-    u=tpc.do(y, 50, 20)
-    dydt=(Kp_pt1*u-y)/T_pt1
-    return dydt
+    x=state
+    y=tpc.do(x, 50, 20)
+    dxdt=(Kp_pt1*y-x)/T_pt1
+    return dxdt
 
 
 #Two-Point-Controller
@@ -56,6 +57,6 @@ power_min=0
 v_0 = 10
 tps= TwoPointController(power_min, power_max, False, TwoPointController.TwoPointState.LOWER)
 
-sol = sc.integrate.solve_ivp(system_pt1, t_span, [v_0], args=(tps,), max_step=0.001)
+sol = sc.integrate.solve_ivp(system_pt1, t_span, [v_0], args=(tps,), max_step=t_step)
 plt.plot(sol.t, sol.y[0,:])
 plt.show()
