@@ -8,7 +8,8 @@ K=1 #Übertragungskonstante
 T = 1 #Zeitkonstante
 D = 1 #Dämpfung
 
-lti = sc.signal.TransferFunction([K], [T*T, 2*D*T, 1])
+#lti = sc.signal.TransferFunction([K], [T*T, 2*D*T, 1])
+lti = sc.signal.TransferFunction([10], [T*T, 2*D*T, 1])
 t, y = sc.signal.step(lti, T=np.arange(0, 10, 0.01))
 plt.plot(t, y)
 plt.axis('off')

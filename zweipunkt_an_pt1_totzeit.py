@@ -3,7 +3,7 @@ import scipy as sc
 import matplotlib.pyplot as plt
 
 from enum import Enum
-
+Totzeit funktioniert nicht
 #Define Time
 t_span = (0.0, 5.0)
 t_step = 0.01
